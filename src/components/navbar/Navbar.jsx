@@ -7,8 +7,9 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
+import React from "react";
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <StyledContainer>
       <Logo>Servgraf</Logo>
@@ -41,6 +42,8 @@ export const Navbar = () => {
     </StyledContainer>
   );
 };
+
+export default Navbar;
 
 const StyledContainer = styled.div`
   width: 15vw;
