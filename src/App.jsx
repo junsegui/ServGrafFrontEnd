@@ -1,5 +1,5 @@
 import Container from "./components/container/Container";
-import { Navbar } from "./components/navbar/Navbar";
+import { Navbar } from "./components/navbar/";
 
 import { Routes } from "./components/routes/Routes";
 
