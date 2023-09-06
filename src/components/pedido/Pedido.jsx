@@ -13,7 +13,7 @@ const Pedido = () => {
       <TopPart>
         <Welcome>Bienvenido, Usuario! 👋</Welcome>
         <ButtonsCont>
-          <Button onClick={(e) => dispatch(openModal())}>+ Nueva Compra</Button>
+          <Button onClick={() => dispatch(openModal())}>+ Nueva Compra</Button>
           <Button>+ Nueva Cotizacion</Button>
         </ButtonsCont>
       </TopPart>
