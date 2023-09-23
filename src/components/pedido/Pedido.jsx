@@ -1,11 +1,10 @@
 import { styled } from "styled-components";
 import { Newpurchasemodal } from "../modal/Newpurchasemodal";
-import { useSelector, useDispatch } from "react-redux";
-import { openModal } from "../../redux/modalsReducer/actionModalReducer";
+import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 const Pedido = () => {
   const { isOpenPurchaseModal } = useSelector((state) => state.modals);
-  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -13,8 +12,7 @@ const Pedido = () => {
       <TopPart>
         <Welcome>Bienvenido, Usuario! 👋</Welcome>
         <ButtonsCont>
-          <Button onClick={() => dispatch(openModal())}>+ Nueva Compra</Button>
-          <Button>+ Nueva Cotizacion</Button>
+          <Button to='/pedido/nueva-orden'>+ Nueva Compra</Button>
         </ButtonsCont>
       </TopPart>
     </Container>
@@ -36,7 +34,7 @@ const TopPart = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Button = styled.button`
+const Button = styled(NavLink)`
   padding: 0.4rem 0.8rem 0.4rem 0.8rem;
   margin-right: 0%;
   background-color: #36a28b;
@@ -46,11 +44,15 @@ const Button = styled.button`
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
+  margin-left: 0%;
+  margin-right: 0%;
 `;
 const Welcome = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
   margin-left: 5%;
+  color: #4d4d4d;
   width: 50%;
 `;
 const ButtonsCont = styled.div`
@@ -58,5 +60,6 @@ const ButtonsCont = styled.div`
   height: auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: right;
+  margin-right: 2%;
 `;

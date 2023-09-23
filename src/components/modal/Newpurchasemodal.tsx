@@ -25,13 +25,57 @@ export const Newpurchasemodal = () => {
             initialValues={newPurchase}
             validationSchema={newPurchaseValidationSchema}
             onSubmit={async (val, { resetForm }) => {}}>
-            <Input
-              name={"direccion"}
-              htmlFor={"direccion"}
-              type={"text"}
-              id={"direccion"}>
-              direccion
-            </Input>
+            <FormikForm>
+              <HeaderForm>
+                <Title>Nuevo pedido</Title>
+                <Input
+                  name={"fecha"}
+                  htmlFor={"fecha"}
+                  type={"date"}
+                  id={"fecha"}>
+                  Fecha
+                </Input>
+                <Input
+                  name={"proveedor"}
+                  htmlFor={"proveedor"}
+                  type={"text"}
+                  id={"proveedor"}>
+                  Proveedor
+                </Input>
+                <Input
+                  name={"lentrega"}
+                  htmlFor={"lentrega"}
+                  type={"text"}
+                  id={"lentrega"}>
+                  Lugar de entrega
+                </Input>
+                <Input
+                  name={"vendedor"}
+                  htmlFor={"vendedor"}
+                  type={"text"}
+                  id={"vendedor"}>
+                  Vendedor
+                </Input>
+                <Input
+                  name={"ncuenta"}
+                  htmlFor={"ncuenta"}
+                  type={"text"}
+                  id={"ncuenta"}>
+                  N de cuenta
+                </Input>
+
+                <Input
+                  name={"fentrega"}
+                  htmlFor={"fentrega"}
+                  type={"date"}
+                  id={"fentrega"}>
+                  Fecha de entrega
+                </Input>
+              </HeaderForm>
+              <BodyForm>
+                <SubTitle></SubTitle>
+              </BodyForm>
+            </FormikForm>
           </FormikContainer>
         </FormContainer>
       </ModalContainer>
@@ -87,8 +131,36 @@ const FormikForm = styled(Form)`
   width: auto;
   height: auto;
   display: flex;
-
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+`;
+const HeaderForm = styled.div`
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+`;
+const BodyForm = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+`;
+const Title = styled.p`
+  width: 100%;
+  font-size: 1.4rem;
+  color: #4d4b4a;
+  font-weight: 800;
+  margin-left: 2%;
+  border-bottom: 1px solid #4d4b4a;
+`;
+const SubTitle = styled.p`
+  width: 100%;
+  font-size: 1.4rem;
+  color: #4d4b4a;
+  font-weight: 800;
+  margin-left: 2%;
+  border-bottom: 1px solid #4d4b4a;
 `;

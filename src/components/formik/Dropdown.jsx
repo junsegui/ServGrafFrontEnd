@@ -1,20 +1,18 @@
 import { ErrorMessage, Field } from "formik";
-import styled from "styled-components";
+import { styled } from "styled-components";
 
 // eslint-disable-next-line react/prop-types
-export const Input = ({ children, name, htmlFor, type, id }) => {
+export const Dropdown = ({ children, name, htmlFor, id }) => {
   return (
     <Field name={name}>
       {({ field, form: { errors } }) => (
         <InputField>
           <Label htmlFor={htmlFor}>{children}</Label>
           <InputStyled
-            type={type}
             id={id}
             {...field}
             isError={errors[field.name]}
-            autoComplete='on'
-          />
+            autoComplete='on'></InputStyled>
           <ErrorMessage name={field.name}>
             {(message) => <ErrorMessageStyled>{message}</ErrorMessageStyled>}
           </ErrorMessage>
@@ -23,7 +21,6 @@ export const Input = ({ children, name, htmlFor, type, id }) => {
     </Field>
   );
 };
-
 const Label = styled.label`
   font-size: 1.3rem;
   margin-right: 1%;
@@ -34,7 +31,7 @@ const Label = styled.label`
     font-size: 1rem;
   }
 `;
-const InputStyled = styled.input`
+const InputStyled = styled.select`
   font-size: 1.2rem;
   border-radius: 4px;
   padding: 1%;
@@ -54,15 +51,6 @@ const InputStyled = styled.input`
     width: 90%;
   }
   border: 1px solid #36a28b;
-
-  &::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
 `;
 
 const InputField = styled.div`
