@@ -1,6 +1,9 @@
 const INITIAL_STATE = {
   isLoged: false,
-  user: null,
+  user: {
+    name: "Juan",
+    surname: "Segui",
+  },
 };
 export const userReducer = (state = INITIAL_STATE, action) => {
   const { type } = action;

@@ -6,15 +6,21 @@ import { Input } from "../formik/Input";
 import { Dropdown } from "../formik/Dropdown";
 import Product from "../product/Product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 export const NewOrder = () => {
   const ERROR_CODES = {
     EMAIL_IN_USE: "auth/emaill-already-in-use",
   };
-  const arr = [1, 2, 3, 4, 5, 6];
   return (
     <Container>
-      <Title>Nuevo Pedido</Title>
+      <Title>
+        <Back to='/pedido'>
+          <BackButton icon={faCircleChevronLeft} />
+        </Back>
+        Nuevo Pedido
+      </Title>
       <FormContainer>
         <FormikContainer
           initialValues={newPurchase}
@@ -138,4 +144,12 @@ const SubmitButton = styled.button`
   font-size: #373535;
   font-weight: 500;
   cursor: pointer;
+`;
+const BackButton = styled(FontAwesomeIcon)`
+  margin-right: 1%;
+  cursor: pointer;
+`;
+const Back = styled(NavLink)`
+  text-decoration: none;
+  color: #4f4f4f;
 `;
