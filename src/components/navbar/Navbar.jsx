@@ -20,7 +20,7 @@ const Navbar = () => {
           </Icons>
         </ButtonDivContainer>
         <ButtonDivContainer>
-          <Icons>
+          <Icons to='proveedor '>
             <Icon icon={faBoxes} />
             Proveedor
           </Icons>

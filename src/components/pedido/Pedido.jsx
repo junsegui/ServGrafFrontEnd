@@ -17,18 +17,34 @@ const Pedido = () => {
       </TopPart>
       <BottomPart>
         <TableTitle>Pedidos </TableTitle>
-        <TableContainer>
-          <ColumnHeader>
-            <ColumnTitle>Nombre</ColumnTitle>
-            <ColumnTitle>Lugar de entrega</ColumnTitle>
-            <ColumnTitle>Fecha de retiro</ColumnTitle>
-            <ColumnTitle>Cliente</ColumnTitle>
-            <ColumnTitle>Cantidad total</ColumnTitle>
-            <ColumnTitle>Total</ColumnTitle>
-            <LinkTitle>Link</LinkTitle>
-          </ColumnHeader>
-          <RowsContainer></RowsContainer>
-        </TableContainer>
+
+        <Table>
+          <TableRow>
+            <TableH>Producto</TableH>
+            <TableH>Cliente</TableH>
+            <TableH>Usuario</TableH>
+            <TableH>Categoria</TableH>
+            <TableH>Cantidad</TableH>
+            <TableH>Precio</TableH>
+            <TableH>Fecha Entrega</TableH>
+            <TableH>Observacion</TableH>
+            <TableH>Link al item</TableH>
+          </TableRow>
+          <TableRow>
+            <TableD>Etiqueta</TableD>
+            <TableD>Marcelo</TableD>
+            <TableD>Juan</TableD>
+            <TableD>Etiquetas</TableD>
+            <TableD>2</TableD>
+            <TableD>$50</TableD>
+            <TableD>12/05/2023</TableD>
+            <TableD>
+              Las etiquetas tienen que ser de una largo determinado exacto por
+              que si no se veran mal en el envase
+            </TableD>
+            <TableD>Link</TableD>
+          </TableRow>
+        </Table>
       </BottomPart>
     </Container>
   );
@@ -92,45 +108,23 @@ const TableTitle = styled.h2`
   margin-left: 2%;
   width: 98%;
 `;
-const TableContainer = styled.div`
-  width: 98%;
-  height: 80vh;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
+
+const Table = styled.table`
+  width: 97%;
+  border-collapse: collapse;
+  overflow-x: scroll;
 `;
-const ColumnHeader = styled.div`
-  height: 10%;
-  width: 100%;
+const TableRow = styled.tr``;
+const TableH = styled.th`
   background-color: #36a28b;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-right: 2.5px solid #36a28b;
-  border-left: 2.5px solid #36a28b;
-  display: flex;
-`;
-const ColumnTitle = styled.p`
-  width: 15%;
-  height: 100;
-  color: #4d4d4d;
   font-size: 1.3rem;
-  font-weight: 700;
-  text-align: center;
-  border-right: 2px solid #4d4d4d;
-  cursor: default;
+  font-weight: bold;
+  border: 1px solid black;
 `;
-const LinkTitle = styled.p`
-  width: 10%;
-  height: 100;
-  color: #4d4d4d;
-  font-size: 1.3rem;
-  font-weight: 700;
+const TableD = styled.td`
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  font-size: 1.2rem;
   text-align: center;
-`;
-const RowsContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  border-left: 2.5px solid #e6e6e7;
-  border-bottom: 2.5px solid #e6e6e7;
-  border-right: 2.5px solid #e6e6e7;
 `;
